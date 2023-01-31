@@ -2,15 +2,10 @@ const Contestant = require("../Models/Contestants");
 const Participant = require("../Models/Participants");
 const Voters = require("../Models/Voters");
 const jwt = require('jsonwebtoken')
-const accountSid = process.env.TWILIO_ACCOUNT_SID;
-const authToken = process.env.TWILIO_AUTH_TOKEN;
-const client = require('twilio')(accountSid, authToken);
 const { customAlphabet } = require('nanoid')
 const UniqueIDs = customAlphabet('ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890', 15)
 const UniqueIDDs = customAlphabet('1234567890', 6)
 const axios = require('axios')
-var https = require('follow-redirects').https;
-var fs = require('fs');
 const { Token } = require("../Models/accountToken");
 
 
