@@ -1,0 +1,330 @@
+[
+  {
+    "_id": {
+      "$oid": "6305e271e91cbcdeecdd2f10"
+    },
+    "phone": "+2348030756525",
+    "firstName": "AKINLOYE",
+    "lastName": "ADEYI"
+  },
+  {
+    "_id": {
+      "$oid": "6305e271e91cbcdeecdd2f11"
+    },
+    "phone": "+2348032377814",
+    "firstName": "AYOADE ",
+    "lastName": "OLUSEGUN"
+  },
+  {
+    "_id": {
+      "$oid": "6305e271e91cbcdeecdd2f12"
+    },
+    "phone": "+12818185905",
+    "firstName": "EMMANUEL",
+    "lastName": "EDOGBO"
+  },
+  {
+    "_id": {
+      "$oid": "6305e271e91cbcdeecdd2f13"
+    },
+    "phone": "+2348069471232",
+    "firstName": "FESTUS",
+    "lastName": "ATOBATELE"
+  },
+  {
+    "_id": {
+      "$oid": "6305e271e91cbcdeecdd2f14"
+    },
+    "phone": "+2348034015078",
+    "firstName": "OLAYEMI",
+    "lastName": "AKINTUNDE"
+  },
+  {
+    "_id": {
+      "$oid": "6305e271e91cbcdeecdd2f15"
+    },
+    "phone": "+2348023242291",
+    "firstName": "AJIBADE ",
+    "lastName": "TAOFIK"
+  },
+  {
+    "_id": {
+      "$oid": "6305e271e91cbcdeecdd2f16"
+    },
+    "phone": "+447886310167",
+    "firstName": "AKINSANMI",
+    "lastName": " AKINPELU"
+  },
+  {
+    "_id": {
+      "$oid": "6305e271e91cbcdeecdd2f17"
+    },
+    "phone": "+2348101018099",
+    "firstName": "OMOLOLA",
+    "lastName": "ANWO"
+  },
+  {
+    "_id": {
+      "$oid": "6305e271e91cbcdeecdd2f18"
+    },
+    "phone": "+447960573728",
+    "firstName": "OYEBODE",
+    "lastName": "AKEEM"
+  },
+  {
+    "_id": {
+      "$oid": "6305e271e91cbcdeecdd2f19"
+    },
+    "phone": "+14439349484",
+    "firstName": "ADENIYI",
+    "lastName": "MAKINDE"
+  },
+  {
+    "_id": {
+      "$oid": "6305e271e91cbcdeecdd2f20"
+    },
+    "phone": "+14045180538",
+    "firstName": "ALEXANDER",
+    "lastName": "ALABI"
+  },
+  {
+    "_id": {
+      "$oid": "6305e271e91cbcdeecdd2f21"
+    },
+    "phone": "+2348034080405",
+    "firstName": "TITI SERIFAT",
+    "lastName": "AKANDE"
+  },
+  {
+    "_id": {
+      "$oid": "6305e271e91cbcdeecdd2f22"
+    },
+    "phone": "+2348033815807",
+    "firstName": "SALIU",
+    "lastName": "OGUNTOLA"
+  },
+  {
+    "_id": {
+      "$oid": "6305e271e91cbcdeecdd2f23"
+    },
+    "phone": "+2348051506825",
+    "firstName": "MUYIWA",
+    "lastName": "MAKINDE"
+  },
+  {
+    "_id": {
+      "$oid": "6305e271e91cbcdeecdd2f24"
+    },
+    "phone": "+2348060056133",
+    "firstName": "PAUL",
+    "lastName": "EGBEDELE"
+  },
+  {
+    "_id": {
+      "$oid": "6305e271e91cbcdeecdd2f25"
+    },
+    "phone": "+2347063924494",
+    "firstName": "TUNDE",
+    "lastName": "ADEKILE"
+  },
+  {
+    "_id": {
+      "$oid": "6305e271e91cbcdeecdd2f26"
+    },
+    "phone": "+2347065019652",
+    "firstName": "FAITH",
+    "lastName": "OSARA"
+  },
+  {
+    "_id": {
+      "$oid": "6305e271e91cbcdeecdd2f27"
+    },
+    "phone": "+2348171157727",
+    "firstName": "OMOLADE",
+    "lastName": "OGUNSAKIN"
+  },
+  {
+    "_id": {
+      "$oid": "6305e271e91cbcdeecdd2f128"
+    },
+    "phone": "+16513993796",
+    "firstName": "GOKE",
+    "lastName": "ODUJOLE"
+  },
+  {
+    "_id": {
+      "$oid": "6305e271e91cbcdeecdd2f29"
+    },
+    "phone": "+447507116901",
+    "firstName": "FEMI",
+    "lastName": "FAOLA"
+  },
+  {
+    "_id": {
+      "$oid": "6305e271e91cbcdeecdd2f30"
+    },
+    "phone": "+2348023573461",
+    "firstName": "PETER",
+    "lastName": "EKWERE"
+  },
+  {
+    "_id": {
+      "$oid": "6305e271e91cbcdeecdd2f31"
+    },
+    "phone": "+2348058244462",
+    "firstName": "ISIAKA",
+    "lastName": "YUSUF"
+  },
+  {
+    "_id": {
+      "$oid": "6305e271e91cbcdeecdd2f32"
+    },
+    "phone": "+2348034686646",
+    "firstName": "AJIBADE",
+    "lastName": "AKEEM"
+  },
+  {
+    "_id": {
+      "$oid": "6305e271e91cbcdeecdd2f33"
+    },
+    "phone": "+2348038571675",
+    "firstName": "ADEWALE",
+    "lastName": "BAKARE"
+  },
+  {
+    "_id": {
+      "$oid": "6305e271e91cbcdeecdd2f34"
+    },
+    "phone": "+19083422488",
+    "firstName": "BAYO",
+    "lastName": "AKINGBALA"
+  },
+  {
+    "_id": {
+      "$oid": "6305e271e91cbcdeecdd2f36"
+    },
+    "phone": "+12162550301",
+    "firstName": "BIODUN ADISA ",
+    "lastName": "OLUWASANMI"
+  },
+  {
+    "_id": {
+      "$oid": "6305e271e91cbcdeecdd2f37"
+    },
+    "phone": "+2348034705077",
+    "firstName": "TUNDE",
+    "lastName": "OMIRINDE"
+  },
+  {
+    "_id": {
+      "$oid": "6305e271e91cbcdeecdd2f38"
+    },
+    "phone": "+2348023436670",
+    "firstName": "KHALID",
+    "lastName": "AFOLABI"
+  },
+  {
+    "_id": {
+      "$oid": "6305e271e91cbcdeecdd2f39"
+    },
+    "phone": "+2348056564914",
+    "firstName": "AKINTOLA ELIZABETH ",
+    "lastName": "AKANDE"
+  },
+  {
+    "_id": {
+      "$oid": "6305e271e91cbcdeecdd2f40"
+    },
+    "phone": "+2348062315694",
+    "firstName": "BILIKISU TOYIN ",
+    "lastName": "LAWAL"
+  },
+  {
+    "_id": {
+      "$oid": "6305e271e91cbcdeecdd2f41"
+    },
+    "phone": "",
+    "firstName": "SEYE",
+    "lastName": "DALLEY"
+  },
+  {
+    "_id": {
+      "$oid": "6305e271e91cbcdeecdd2f42"
+    },
+    "phone": "+2348033639578",
+    "firstName": "MUFU",
+    "lastName": "ALABI"
+  },
+  {
+    "_id": {
+      "$oid": "6305e271e91cbcdeecdd2f43"
+    },
+    "phone": "+2347036977799",
+    "firstName": "ADEYEMI OLUBUSAYO",
+    "lastName": "LOLA"
+  },
+  {
+    "_id": {
+      "$oid": "6305e271e91cbcdeecdd2f44"
+    },
+    "phone": "+2348033212202",
+    "firstName": "EBHOODAGHE OSAGIE ",
+    "lastName": "VICTOR"
+  },
+  {
+    "_id": {
+      "$oid": "6305e271e91cbcdeecdd2f45"
+    },
+    "phone": "+2347068407341",
+    "firstName": "AYANKUNLE",
+    "lastName": "AYANWALE"
+  },
+  {
+    "_id": {
+      "$oid": "6305e271e91cbcdeecdd2f46"
+    },
+    "phone": "+2349121916081",
+    "firstName": "ADEDOKUN GBENGA",
+    "lastName": "VICTOR"
+  },
+  {
+    "_id": {
+      "$oid": "6305e271e91cbcdeecdd2f47"
+    },
+    "phone": "+2348023309567",
+    "firstName": "TOPE",
+    "lastName": "YAKUBU"
+  },
+  {
+    "_id": {
+      "$oid": "6305e271e91cbcdeecdd2f48"
+    },
+    "phone": "+2347086734797",
+    "firstName": "ALFRED",
+    "lastName": " EHAYEME"
+  },
+  {
+    "_id": {
+      "$oid": "6305e271e91cbcdeecdd2f49"
+    },
+    "phone": "+2348167432110",
+    "firstName": "OMOWUNMI",
+    "lastName": "LAWAL"
+  },
+  {
+    "_id": {
+      "$oid": "6305e271e91cbcdeecdd2f50"
+    },
+    "phone": "+2348053023387",
+    "firstName": "CLETUS",
+    "lastName": "AMEAZA"
+  },
+  {
+    "_id": {
+      "$oid": "6305e271e91cbcdeecdd2f51"
+    },
+    "phone": "+2348033611533",
+    "firstName": "BUNMI",
+    "lastName": "OJO"
+  }
+]

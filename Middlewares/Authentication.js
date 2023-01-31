@@ -123,7 +123,8 @@ async function AuthenticationChecker(req, res) {
 async function AllVotes(req, res) {
     console.log("fqqwweer")
     Voters.find({}, (err, votes) => {
-        if (votes && votes.length > 0) {
+        console.log(votes)
+        if (votes) {
             res.status(200).send({ statusMessage: { President: "", VicePresident: "", GS: "", AGS: "", PS: "", Treasurer: "", FS: "", SS: "", ExOM: "", LA: "" } })
         }
         else {
@@ -867,7 +868,7 @@ async function VoterSelection(req, res) {
                                 const new_Voters = new Voters({
                                     phone: data.phone,
                                     contestantId: position,
-                                    generalContestantId: generalPositionId
+                                    generalContestantId: generalContestantId
 
                                 })
                                 new_Voters.save()
