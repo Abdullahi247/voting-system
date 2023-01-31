@@ -13,8 +13,7 @@ const { Token } = require("../Models/accountToken");
 const president = 'PSD', VicePresident = "VPSD", GS = "GS", AGS = "AGS", PS = "PS", Treasurer = "TR", FS = "FS", SS = "SS", ExOM = "EXOM", LA = "LA"
 
 async function LoginUsers(req, res) {
-    console.log(process.env.TWILIO_ACCOUNT_SID)
-    console.log(req.body)
+   
     const { username } = req.body
     Participant.findOne({ phone: username }, (err, participant) => {
         if (participant) {
@@ -27,7 +26,7 @@ async function LoginUsers(req, res) {
                             {
                                 "destinations": [
                                     {
-                                        "to": username
+                                        "to": `${username}`
                                     }
                                 ],
                                 "from": "Voting System",
@@ -43,11 +42,11 @@ async function LoginUsers(req, res) {
                             }
                         }
                     )
-                        .then((res) => {
+                        .then((response) => {
                             res.status(200).send({ statusMessage: 'Successful' })
                         })
                         .catch((err) => {
-                            res.status(200).send({ statusMessage: 'Successful' })
+                            res.status(400).send({ statusMessage: 'failed' })
                         })
                 } else {
                     const new_Token = new Token({
@@ -61,7 +60,7 @@ async function LoginUsers(req, res) {
                                     {
                                         "destinations": [
                                             {
-                                                "to": username
+                                                "to": `${username}`
                                             }
                                         ],
                                         "from": "Voting System",
@@ -77,11 +76,11 @@ async function LoginUsers(req, res) {
                                     }
                                 }
                             )
-                                .then((res) => {
+                                .then((response) => {
                                     res.status(200).send({ statusMessage: 'Successful' })
                                 })
                                 .catch((err) => {
-                                    res.status(200).send({ statusMessage: 'Successful' })
+                                    res.status(400).send({ statusMessage: 'failed' })
                                 })
                         })
                         .catch((err) => {

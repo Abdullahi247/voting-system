@@ -6,6 +6,7 @@ module.exports = async (req, res) => {
     //Set up default mongoose connection
 
     const MONGODB_URI = process.env.MONGODB_URI
+    mongoose.set("strictQuery", false);
 
     mongoose.connect(MONGODB_URI, { useNewUrlParser: true });
     // mongoose.connect(MONGODB_URI, { useNewUrlParser: true });
