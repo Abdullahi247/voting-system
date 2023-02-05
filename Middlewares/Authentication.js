@@ -102,7 +102,6 @@ async function AdminLogin(req, res) {
 
 async function AuthenticationChecker(req, res) {
     const authHeader = req.get('Authorization')
-    console.log(authHeader)
     if (authHeader) {
         const Token = authHeader.split(' ')[1]
         jwt.verify(Token, process.env.MYJWTSECRET, (err, decoded) => {
@@ -121,9 +120,7 @@ async function AuthenticationChecker(req, res) {
 }
 
 async function AllVotes(req, res) {
-    console.log("fqqwweer")
     Voters.find({}, (err, votes) => {
-        console.log(votes)
         if (votes) {
             res.status(200).send({ statusMessage: { President: "", VicePresident: "", GS: "", AGS: "", PS: "", Treasurer: "", FS: "", SS: "", ExOM: "", LA: "" } })
         }
@@ -134,7 +131,6 @@ async function AllVotes(req, res) {
 }
 
 async function AddNewCandidate(req, res) {
-    console.log(req.body)
     const { firstName,
         lastName,
         contact,
@@ -368,21 +364,16 @@ async function AddNewCandidate(req, res) {
 
 async function CheckMontitorPerVote(req, res) {
     const { position, generalContestantId } = req.body
-    console.log(req.body)
-    console.log("req.body")
     if (position === "President") {
         Contestant.find({ generalContestantId: president }, (err, contestant) => {
             if (contestant) {
                 Voters.find({ generalContestantId: president }, (err, contestantIds) => {
                     if (contestantIds) {
-                        console.log(contestant.length)
                         function SortVote(contestant, contestantIds) {
                             var stats = []
                             for (let i = 0; i < contestant.length; i++) {
-                                console.log(contestantIds)
                                 var all = 0
                                 const g = contestantIds.map((x) => {
-                                    console.log(x.contestantId == contestant[i].contestantId)
                                     if (x.contestantId == contestant[i].contestantId) {
                                         all++
                                         return all
@@ -394,7 +385,6 @@ async function CheckMontitorPerVote(req, res) {
                                 });
                                 const fullName = contestant[i].firstName + " " + contestant[i].lastName
                                 stats.push({ fullName: fullName, counts: all, imageLink: contestant[i].imageLink })
-                                // console.log(obj)
                             }
                             return stats
                         }
@@ -417,14 +407,11 @@ async function CheckMontitorPerVote(req, res) {
             if (contestant) {
                 Voters.find({ generalContestantId: VicePresident }, (err, contestantIds) => {
                     if (contestantIds) {
-                        console.log(contestant.length)
                         function SortVote(contestant, contestantIds) {
                             var stats = []
                             for (let i = 0; i < contestant.length; i++) {
-                                console.log(contestantIds)
                                 var all = 0
                                 const g = contestantIds.map((x) => {
-                                    console.log(x.contestantId == contestant[i].contestantId)
                                     if (x.contestantId == contestant[i].contestantId) {
                                         all++
                                         return all
@@ -436,7 +423,6 @@ async function CheckMontitorPerVote(req, res) {
                                 });
                                 const fullName = contestant[i].firstName + " " + contestant[i].lastName
                                 stats.push({ fullName: fullName, counts: all, imageLink: contestant[i].imageLink })
-                                // console.log(obj)
                             }
                             return stats
                         }
@@ -459,14 +445,11 @@ async function CheckMontitorPerVote(req, res) {
             if (contestant) {
                 Voters.find({ generalContestantId: GS }, (err, contestantIds) => {
                     if (contestantIds) {
-                        console.log(contestant.length)
                         function SortVote(contestant, contestantIds) {
                             var stats = []
                             for (let i = 0; i < contestant.length; i++) {
-                                console.log(contestantIds)
                                 var all = 0
                                 const g = contestantIds.map((x) => {
-                                    console.log(x.contestantId == contestant[i].contestantId)
                                     if (x.contestantId == contestant[i].contestantId) {
                                         all++
                                         return all
@@ -478,7 +461,6 @@ async function CheckMontitorPerVote(req, res) {
                                 });
                                 const fullName = contestant[i].firstName + " " + contestant[i].lastName
                                 stats.push({ fullName: fullName, counts: all, imageLink: contestant[i].imageLink })
-                                // console.log(obj)
                             }
                             return stats
                         }
@@ -501,14 +483,11 @@ async function CheckMontitorPerVote(req, res) {
             if (contestant) {
                 Voters.find({ generalContestantId: AGS }, (err, contestantIds) => {
                     if (contestantIds) {
-                        console.log(contestant.length)
                         function SortVote(contestant, contestantIds) {
                             var stats = []
                             for (let i = 0; i < contestant.length; i++) {
-                                console.log(contestantIds)
                                 var all = 0
                                 const g = contestantIds.map((x) => {
-                                    console.log(x.contestantId == contestant[i].contestantId)
                                     if (x.contestantId == contestant[i].contestantId) {
                                         all++
                                         return all
@@ -520,7 +499,6 @@ async function CheckMontitorPerVote(req, res) {
                                 });
                                 const fullName = contestant[i].firstName + " " + contestant[i].lastName
                                 stats.push({ fullName: fullName, counts: all, imageLink: contestant[i].imageLink })
-                                // console.log(obj)
                             }
                             return stats
                         }
@@ -543,14 +521,11 @@ async function CheckMontitorPerVote(req, res) {
             if (contestant) {
                 Voters.find({ generalContestantId: PS }, (err, contestantIds) => {
                     if (contestantIds) {
-                        console.log(contestant.length)
                         function SortVote(contestant, contestantIds) {
                             var stats = []
                             for (let i = 0; i < contestant.length; i++) {
-                                console.log(contestantIds)
                                 var all = 0
                                 const g = contestantIds.map((x) => {
-                                    console.log(x.contestantId == contestant[i].contestantId)
                                     if (x.contestantId == contestant[i].contestantId) {
                                         all++
                                         return all
@@ -562,7 +537,6 @@ async function CheckMontitorPerVote(req, res) {
                                 });
                                 const fullName = contestant[i].firstName + " " + contestant[i].lastName
                                 stats.push({ fullName: fullName, counts: all, imageLink: contestant[i].imageLink })
-                                // console.log(obj)
                             }
                             return stats
                         }
@@ -585,14 +559,11 @@ async function CheckMontitorPerVote(req, res) {
             if (contestant) {
                 Voters.find({ generalContestantId: Treasurer }, (err, contestantIds) => {
                     if (contestantIds) {
-                        console.log(contestant.length)
                         function SortVote(contestant, contestantIds) {
                             var stats = []
                             for (let i = 0; i < contestant.length; i++) {
-                                console.log(contestantIds)
                                 var all = 0
                                 const g = contestantIds.map((x) => {
-                                    console.log(x.contestantId == contestant[i].contestantId)
                                     if (x.contestantId == contestant[i].contestantId) {
                                         all++
                                         return all
@@ -604,7 +575,6 @@ async function CheckMontitorPerVote(req, res) {
                                 });
                                 const fullName = contestant[i].firstName + " " + contestant[i].lastName
                                 stats.push({ fullName: fullName, counts: all, imageLink: contestant[i].imageLink })
-                                // console.log(obj)
                             }
                             return stats
                         }
@@ -627,14 +597,11 @@ async function CheckMontitorPerVote(req, res) {
             if (contestant) {
                 Voters.find({ generalContestantId: FS }, (err, contestantIds) => {
                     if (contestantIds) {
-                        // console.log(contestant.length)
                         function SortVote(contestant, contestantIds) {
                             var stats = []
                             for (let i = 0; i < contestant.length; i++) {
-                                // console.log(contestantIds)
                                 var all = 0
                                 const g = contestantIds.map((x) => {
-                                    // console.log(x.contestantId == contestant[i].contestantId)
                                     if (x.contestantId == contestant[i].contestantId) {
                                         all++
                                         return all
@@ -646,7 +613,6 @@ async function CheckMontitorPerVote(req, res) {
                                 });
                                 const fullName = contestant[i].firstName + " " + contestant[i].lastName
                                 stats.push({ fullName: fullName, counts: all, imageLink: contestant[i].imageLink })
-                                // console.log(obj)
                             }
                             return stats
                         }
@@ -669,14 +635,11 @@ async function CheckMontitorPerVote(req, res) {
             if (contestant) {
                 Voters.find({ generalContestantId: SS }, (err, contestantIds) => {
                     if (contestantIds) {
-                        // console.log(contestant.length)
                         function SortVote(contestant, contestantIds) {
                             var stats = []
                             for (let i = 0; i < contestant.length; i++) {
-                                // console.log(contestantIds)
                                 var all = 0
                                 const g = contestantIds.map((x) => {
-                                    // console.log(x.contestantId == contestant[i].contestantId)
                                     if (x.contestantId == contestant[i].contestantId) {
                                         all++
                                         return all
@@ -688,7 +651,6 @@ async function CheckMontitorPerVote(req, res) {
                                 });
                                 const fullName = contestant[i].firstName + " " + contestant[i].lastName
                                 stats.push({ fullName: fullName, counts: all, imageLink: contestant[i].imageLink })
-                                // console.log(obj)
                             }
                             return stats
                         }
@@ -711,14 +673,11 @@ async function CheckMontitorPerVote(req, res) {
             if (contestant) {
                 Voters.find({ generalContestantId: ExOM }, (err, contestantIds) => {
                     if (contestantIds) {
-                        console.log(contestant.length)
                         function SortVote(contestant, contestantIds) {
                             var stats = []
                             for (let i = 0; i < contestant.length; i++) {
-                                console.log(contestantIds)
                                 var all = 0
                                 const g = contestantIds.map((x) => {
-                                    console.log(x.contestantId == contestant[i].contestantId)
                                     if (x.contestantId == contestant[i].contestantId) {
                                         all++
                                         return all
@@ -730,7 +689,6 @@ async function CheckMontitorPerVote(req, res) {
                                 });
                                 const fullName = contestant[i].firstName + " " + contestant[i].lastName
                                 stats.push({ fullName: fullName, counts: all, imageLink: contestant[i].imageLink })
-                                // console.log(obj)
                             }
                             return stats
                         }
@@ -753,14 +711,11 @@ async function CheckMontitorPerVote(req, res) {
             if (contestant) {
                 Voters.find({ generalContestantId: LA }, (err, contestantIds) => {
                     if (contestantIds) {
-                        // console.log(contestant.length)
                         function SortVote(contestant, contestantIds) {
                             var stats = []
                             for (let i = 0; i < contestant.length; i++) {
-                                // /    console.log(contestantIds)
                                 var all = 0
                                 const g = contestantIds.map((x) => {
-                                    console.log(x.contestantId == contestant[i].contestantId)
                                     if (x.contestantId == contestant[i].contestantId) {
                                         all++
                                         return all
@@ -772,7 +727,6 @@ async function CheckMontitorPerVote(req, res) {
                                 });
                                 const fullName = contestant[i].firstName + " " + contestant[i].lastName
                                 stats.push({ fullName: fullName, counts: all, imageLink: contestant[i].imageLink })
-                                // console.log(obj)
                             }
                             return stats
                         }
@@ -796,19 +750,15 @@ async function CheckMontitorPerVote(req, res) {
 }
 async function PollPositionPerVote(req, res) {
     const { position } = req.body
-    // console.log(req.body)
     Contestant.find({ position: position }, (err, contestant) => {
         if (contestant) {
             Voters.find({ contestantId: position }, (err, contestantIds) => {
                 if (contestantIds) {
-                    // console.log(contestant.length)
                     function SortVote(contestant, contestantIds) {
                         var stats = []
                         for (let i = 0; i < contestant.length; i++) {
-                            console.log(contestantIds)
                             var all = 0
                             const g = contestantIds.map((x) => {
-                                // console.log(x.contestantId == contestant[i].contestantId)
                                 if (x.contestantId == contestant[i].contestantId) {
                                     all++
                                     return all
@@ -820,7 +770,6 @@ async function PollPositionPerVote(req, res) {
                             });
                             const fullName = contestant[i].firstName + " " + contestant[i].lastName
                             stats.push({ fullName: fullName, position: contestant[i].position, contestantId: contestant[i].contestantId, imageLink: contestant[i].imageLink, generalContestantId: contestant[i].generalContestantId })
-                            // console.log(obj)
                         }
                         return stats
                     }
@@ -840,17 +789,14 @@ async function PollPositionPerVote(req, res) {
 }
 
 async function VoterSelection(req, res) {
-    console.log(req.body)
     const { position, generalContestantId } = req.body
     const authHeader = req.get('Authorization')
-    // console.log(authHeader)
     if (authHeader) {
         const Token = authHeader.split(' ')[1]
         jwt.verify(Token, process.env.MYJWTSECRET, (err, decoded) => {
             if (decoded) {
 
                 const votersContact = decoded.username
-                console.log(votersContact)
                 Voters.findOne({ phone: votersContact, generalContestantId: generalContestantId }, (err, voter) => {
                     if (voter) {
                         res.status(201).send({ statusMessage: "Vote allready Casted successfully" })
@@ -900,14 +846,12 @@ async function VoterSelection(req, res) {
 
 async function ValidateOTP(req, res) {
     const { username, otp } = req.body
-    console.log(req.body)
-    console.log(username.slice(-6))
     Participant.findOne({ phone: username }, (err, participant) => {
         if (participant) {
             Token.findOne({ token: otp }, (err, user) => {
                 if (user) {
                     const payload = { username }
-                    const token = jwt.sign(payload, process.env.MYJWTSECRET, { expiresIn: '24h' })
+                    const token = jwt.sign(payload, process.env.MYJWTSECRET, { expiresIn: '2d' })
                     res.status(200).send({ statusMessage: token })
                 }
                 else {
