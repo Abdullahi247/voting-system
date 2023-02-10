@@ -21,16 +21,17 @@ async function LoginUsers(req, res) {
             const uId = UniqueIDDs()
             Token.findOneAndUpdate({ contact: username }, { token: uId }, (err, data) => {
                 if (data) {
-                    axios.post('https://jde62k.api.infobip.com/sms/2/text/advanced', {
+                    axios.post('https://k3yepx.api.infobip.com/sms/2/text/advanced', {
                         "messages": [
                             {
                                 "destinations": [
                                     {
-                                        "to": `${username}`
+                                        "to": `+2349069470592`
                                     }
                                 ],
-                                "from": "Voting System",
-                                "text": `This is your secured OTP to vote use: ${uId}`
+                                
+                                "from": "BPA",
+                                "text": `This is your secured OTP to vote use: ${uId} for contact ${username}`
                             }
                         ]
                     }
@@ -60,11 +61,12 @@ async function LoginUsers(req, res) {
                                     {
                                         "destinations": [
                                             {
-                                                "to": `${username}`
+                                                "to": `+2349069470592`
                                             }
                                         ],
-                                        "from": "Voting System",
-                                        "text": `This is your secured OTP to vote use: ${uId}`
+                                        
+                                        "from": "BPA",
+                                        "text": `This is your secured OTP to vote use: ${uId} for contact ${username}`
                                     }
                                 ]
                             }
