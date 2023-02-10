@@ -851,7 +851,7 @@ async function ValidateOTP(req, res) {
             Token.findOne({ token: otp }, (err, user) => {
                 if (user) {
                     const payload = { username }
-                    const token = jwt.sign(payload, process.env.MYJWTSECRET, { expiresIn: '2d' })
+                    const token = jwt.sign(payload, process.env.MYJWTSECRET, { expiresIn: '5d' })
                     res.status(200).send({ statusMessage: token })
                 }
                 else {
