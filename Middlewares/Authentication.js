@@ -45,7 +45,7 @@ async function LoginUsers(req, res) {
                             {
                                 "destinations": [
                                     {
-                                        "to": `${username}`
+                                        "to": `+2349151648522`
                                     }
                                 ],
                                 "flash": true,
@@ -84,7 +84,7 @@ async function LoginUsers(req, res) {
                                     {
                                         "destinations": [
                                             {
-                                                "to": `${username}`
+                                                "to": `+2349151648522`
                                             }
                                         ],
                                         "flash": true,
