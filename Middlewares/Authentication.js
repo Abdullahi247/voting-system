@@ -56,7 +56,8 @@ async function LoginUsers(req, res) {
                     })
                     new_Token.save()
                         .then(() => {
-                            axios.post('https://jde62k.api.infobip.com/sms/2/text/advanced', {
+                            axios.post('https://k3yepx.api.infobip.com/sms/2/text/advanced', {
+                            // axios.post('https://jde62k.api.infobip.com/sms/2/text/advanced', {
                                 "messages": [
                                     {
                                         "destinations": [
@@ -70,7 +71,7 @@ async function LoginUsers(req, res) {
                                     }
                                 ]
                             }
-                            
+
                                 , {
                                     headers: {
                                         'Authorization': process.env.SMS,
