@@ -7,33 +7,53 @@ const UniqueIDs = customAlphabet('ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890', 15)
 const UniqueIDDs = customAlphabet('1234567890', 6)
 const axios = require('axios')
 const { Token } = require("../Models/accountToken");
-
+let infobip = require('node-infobip');
 
 
 const president = 'PSD', VicePresident = "VPSD", GS = "GS", AGS = "AGS", PS = "PS", Treasurer = "TR", FS = "FS", SS = "SS", ExOM = "EXOM", LA = "LA"
 
 async function LoginUsers(req, res) {
-   
+
     const { username } = req.body
     Participant.findOne({ phone: username }, (err, participant) => {
         if (participant) {
 
+            (async () => {
+         
+                
+                // twoFA.authorize(auth)
+
+                // console.log(await twoFA.newApp({
+                //     "name": "Mobile Number Verifier",
+                //     "configuration": {
+                //         "pinAttempts": 10,
+                //         "allowMultiplePinVerifications": true,
+                //         "pinTimeToLive": "15m",
+                //         "verifyPinLimit": "1/3s",
+                //         "sendPinPerApplicationLimit": "10000/1d",
+                //         "sendPinPerPhoneNumberLimit": "3/1d"
+                //     },
+                //     "enabled": true
+                // }))
+            })()
             const uId = UniqueIDDs()
             Token.findOneAndUpdate({ contact: username }, { token: uId }, (err, data) => {
                 if (data) {
-                    axios.post('https://k3yepx.api.infobip.com/sms/2/text/advanced', {
+                    // axios.post('https://jde62k.api.infobip.com/sms/2/text/advanced', {
+                        axios.post('https://lzgyvr.api.infobip.com/sms/2/text/advanced', {
                         "messages": [
                             {
                                 "destinations": [
                                     {
-                                        "to": `+2349069470592`
+                                        "to": `${username}`
                                     }
                                 ],
-                                
+                                "flash": true,
                                 "from": "BPA",
                                 "text": `This is your secured OTP to vote use: ${uId} for contact ${username}`
                             }
-                        ]
+                        ],
+                        "type": "ONE_TIME_PIN"
                     }
                         , {
                             headers: {
@@ -44,6 +64,8 @@ async function LoginUsers(req, res) {
                         }
                     )
                         .then((response) => {
+                            console.log(response.data.messages[0].status)
+
                             res.status(200).send({ statusMessage: 'Successful' })
                         })
                         .catch((err) => {
@@ -56,20 +78,20 @@ async function LoginUsers(req, res) {
                     })
                     new_Token.save()
                         .then(() => {
-                            axios.post('https://k3yepx.api.infobip.com/sms/2/text/advanced', {
+                            axios.post('https://lzgyvr.api.infobip.com/sms/2/text/advanced', {
                             // axios.post('https://jde62k.api.infobip.com/sms/2/text/advanced', {
                                 "messages": [
                                     {
                                         "destinations": [
                                             {
-                                                "to": `+2349069470592`
+                                                "to": `${username}`
                                             }
                                         ],
-                                        
+                                        "flash": true,
                                         "from": "BPA",
                                         "text": `This is your secured OTP to vote use: ${uId} for contact ${username}`
                                     }
-                                ]
+                                ], "type": "ONE_TIME_PIN"
                             }
 
                                 , {
@@ -81,6 +103,7 @@ async function LoginUsers(req, res) {
                                 }
                             )
                                 .then((response) => {
+                                    console.log(response)
                                     res.status(200).send({ statusMessage: 'Successful' })
                                 })
                                 .catch((err) => {
